@@ -39,6 +39,13 @@ namespace API
             services.AddApplicationServices();
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddSwaggerDocumentation();
+            services.AddCors( opt => 
+            {
+                opt.AddPolicy("CorePolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +56,7 @@ namespace API
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors("CorePolicy");
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

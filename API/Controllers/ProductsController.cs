@@ -71,7 +71,7 @@ namespace API.Controllers
         [Route("types")]
         public async Task<ActionResult<List<ProductType>>> GetProductTypes()
         {
-            var types = await _productRepo.ListAllAsync();
+            var types = await _productTypeRepo.ListAllAsync();
             return Ok(types);
         }
     }

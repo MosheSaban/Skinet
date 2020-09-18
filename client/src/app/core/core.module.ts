@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { TestErrorComponent } from './test-error/test-error.component';
@@ -16,6 +17,7 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
     CommonModule,
     FontAwesomeModule,
     RouterModule,
+    BreadcrumbModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true

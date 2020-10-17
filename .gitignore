@@ -2,3 +2,8 @@ obj
 bin
 appsettings.json
 *.db
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/skinet/DesignTimeBuild/.dtbcache.v2
+.vs/skinet/v16/.suo

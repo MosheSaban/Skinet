@@ -9,9 +9,9 @@
       <a class="p-2" routerLink="/test-errors" routerLinkActive="active">Errors</a>
     </nav>
     <div class="d-flex align-items-center">
-        <a class="position-relative">
+        <a routerLink="/basket" routerLinkActive="router-link-active"  class="position-relative">
             <fa-icon [icon]="faShoppingCart" size="2x" [class]="['mr-5', 'text-dark']"></fa-icon>
-            <div class="cart-no text-light bg-info">5</div>
+            <div *ngIf="(basket$ | async) as basket" class="cart-no text-light bg-info">{{basket.items.length}}</div>
         </a>
         <a class="btn btn-outline-secondary mr-2">Login</a>
         <a class="btn btn-outline-secondary mr-3">Sign up</a>

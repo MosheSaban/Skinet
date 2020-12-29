@@ -5,22 +5,33 @@ import { PaginhHeaderComponent } from './components/paginh-header/paginh-header.
 import { PagerComponent } from './components/pager/pager.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
-
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TextInputComponent } from './components/text-input/text-input.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSpinner  } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
-  declarations: [PaginhHeaderComponent, PagerComponent, OrderTotalsComponent],
+  declarations: [PaginhHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    FontAwesomeModule
   ],
   exports: [
     PaginationModule,
     PaginhHeaderComponent,
     PagerComponent,
     CarouselModule,
-    OrderTotalsComponent
+    OrderTotalsComponent,
+    BsDropdownModule,
+    TextInputComponent,
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faSpinner); 
+  }
+}
